@@ -1,2 +1,2 @@
-# J-piter
+# Júpiter
 Sistema de Gestão de Propinas 
