@@ -1,0 +1,229 @@
+﻿<Page
+    x:Class="Jupiter.Views.Pages.PageAlunos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Jupiter.Views.Pages"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Lista de Alunos"
+    MinWidth="850"
+    MinHeight="530"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Background="White"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="colorZone" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="colorZone" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+        </EventTrigger>
+    </Page.Triggers>
+
+    <Grid>
+        <materialDesign:ColorZone
+            x:Name="colorZone"
+            Margin="20,10,20,0"
+            Padding="8,4,8,4"
+            Panel.ZIndex="1"
+            materialDesign:ShadowAssist.ShadowDepth="Depth1"
+            CornerRadius="2"
+            Mode="Dark"
+            RenderTransformOrigin="0.5,0.5">
+            <materialDesign:ColorZone.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </materialDesign:ColorZone.RenderTransform>
+            <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Height="Auto"
+                    Margin="0,4"
+                    Foreground="White"
+                    Style="{DynamicResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                </Button>
+                <StackPanel
+                    Grid.Column="1"
+                    Height="40"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBox
+                        Name="_Pesquizar"
+                        MinWidth="460"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Pesquisar"
+                        materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                        BorderThickness="0"
+                        TextChanged="_Pesquizar_TextChanged" />
+
+                    <ComboBox
+                        Name="_Classes"
+                        Width="100"
+                        Margin="10,0"
+                        materialDesign:HintAssist.Hint="Classe"
+                        BorderBrush="#89FFFFFF"
+                        BorderThickness="0"
+                        SelectedIndex="0"
+                        SelectionChanged="_Classes_SelectionChanged"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+
+                    <TextBox
+                        Name="textAno"
+                        materialDesign:HintAssist.Hint="Ano Letivo"
+                        materialDesign:HintAssist.IsFloating="True"
+                        BorderBrush="#89FFFFFF"
+                        BorderThickness="0"
+                        MaxLength="4"
+                        PreviewTextInput="TextBox_PreviewTextInput"
+                        Text="2023"
+                        TextChanged="textAno_TextChanged" />
+                    <Button
+                        Name="_totalAlunos"
+                        Margin="5,0,0,0"
+                        Background="#FF1B1B1C"
+                        BorderBrush="{x:Null}"
+                        FontSize="10"
+                        Foreground="#DDFFFFFF"
+                        ToolTip="56 ALUNOS">
+                        <materialDesign:PackIcon Kind="Users" />
+                    </Button>
+                </StackPanel>
+                <Button
+                    Name="btn_code"
+                    Grid.Column="2"
+                    Height="Auto"
+                    Margin="0,4"
+                    Padding="4"
+                    Background="Black"
+                    Click="btn_code_Click"
+                    Foreground="White">
+                    <materialDesign:PackIcon Kind="BarcodeScan" />
+                </Button>
+                <materialDesign:PopupBox
+                    Grid.Column="3"
+                    Padding="0"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Foreground="White"
+                    PlacementMode="BottomAndAlignLeftEdges">
+                    <ListBox
+                        Name="ListaCam"
+                        Padding="10"
+                        FontSize="10" />
+                </materialDesign:PopupBox>
+            </Grid>
+        </materialDesign:ColorZone>
+
+        <ListView
+            Name="_ListaAlunos"
+            Margin="5,63,5,20"
+            HorizontalAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            SelectionChanged="_ListaAlunos_SelectionChanged">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Width="120"
+                        Height="150"
+                        Padding="5"
+                        BorderBrush="#7FF1F1F1"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                        <StackPanel Margin="5">
+                            <Border
+                                Width="85"
+                                Height="85"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                CornerRadius="100">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Foto}" Stretch="UniformToFill" />
+                                </Border.Background>
+                            </Border>
+                            <TextBlock
+                                FontSize="10"
+                                Foreground="#FF1B1B1C"
+                                Text="{Binding Nome}"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Name="_btn_add"
+            Width="40"
+            Height="40"
+            Margin="20"
+            Padding="4"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Background="Black"
+            BorderBrush="{x:Null}"
+            Click="_btn_add_Click"
+            Foreground="White"
+            Style="{DynamicResource MaterialDesignFloatingActionButton}"
+            ToolTip="Adicionar Aluno"
+            ToolTipService.Placement="Right">
+            <materialDesign:PackIcon
+                Width="24"
+                Height="24"
+                Kind="Plus" />
+        </Button>
+    </Grid>
+</Page>

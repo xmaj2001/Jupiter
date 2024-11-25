@@ -1,0 +1,611 @@
+﻿<Window
+    x:Class="Jupiter.Views.LoginJP"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Jupiter.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="800"
+    Height="420"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    Foreground="White"
+    Icon="/Jupiter;component/Assets/logo.ico"
+    TextElement.FontSize="13"
+    TextElement.FontWeight="Regular"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Storyboard x:Key="Start">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="400.541">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut" Power="5" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut" Power="5" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Retorno">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="400.541">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut" Power="5" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0.498">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut" Power="5" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="200.968">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Gm" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Cr">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="400.541">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut" Exponent="2" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut" Exponent="2" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut" Exponent="2" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut" Exponent="2" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <StringAnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextBlock.Text)">
+                <DiscreteStringKeyFrame KeyTime="0" Value="Não possui uma Conta?" />
+                <DiscreteStringKeyFrame KeyTime="0:0:2" Value="Já tens uma Conta?" />
+            </StringAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(ContentControl.Content)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Criar" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="Entrar" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Cr2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="card" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <SplineDoubleKeyFrame KeyTime="0" Value="400.541" />
+                <SplineDoubleKeyFrame KeyTime="0:0:2" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="0:0:1.4" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="0:0:2" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="0:0:1.4" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="0:0:2" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stackPanel1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <StringAnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextBlock.Text)">
+                <DiscreteStringKeyFrame KeyTime="0" Value="Já tens uma Conta?" />
+                <DiscreteStringKeyFrame KeyTime="0:0:2" Value="Não possui uma Conta?" />
+            </StringAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(ContentControl.Content)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Entrar" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="Criar" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Start}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BT_Exit">
+            <BeginStoryboard x:Name="Retorno_BeginStoryboard" Storyboard="{StaticResource Retorno}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
+            <BeginStoryboard x:Name="Cr_BeginStoryboard" Storyboard="{StaticResource Cr}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button2">
+            <BeginStoryboard x:Name="Cr2_BeginStoryboard" Storyboard="{StaticResource Cr2}" />
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Name="Gm" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform />
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <materialDesign:Card
+            x:Name="card1"
+            Margin="0,10"
+            VerticalAlignment="Stretch"
+            RenderTransformOrigin="0.5,0.5">
+            <materialDesign:Card.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </materialDesign:Card.RenderTransform>
+
+            <Grid>
+                <Grid Width="390" HorizontalAlignment="Right">
+                    <Button
+                        Name="BT_Exit"
+                        Margin="5"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Click="BT_Exit_Click"
+                        Foreground="#FF03A9F4">
+                        <materialDesign:PackIcon Kind="WindowClose" />
+                    </Button>
+                    <StackPanel VerticalAlignment="Center">
+                        <materialDesign:PackIcon
+                            Name="Dispo"
+                            Width="170"
+                            Height="150"
+                            HorizontalAlignment="Center"
+                            Foreground="Black"
+                            Kind="School" />
+                        <materialDesign:RatingBar
+                            x:Name="Rb"
+                            Margin="0,10"
+                            HorizontalAlignment="Center"
+                            Max="3"
+                            Orientation="Horizontal"
+                            Visibility="Collapsed"
+                            Value="1">
+                            <materialDesign:RatingBar.ValueItemTemplate>
+                                <DataTemplate DataType="system:Int32">
+                                    <Grid>
+                                        <materialDesign:PackIcon
+                                            Width="24"
+                                            Height="24"
+                                            Kind="Circle" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="8"
+                                            Foreground="White"
+                                            Text="{Binding}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </materialDesign:RatingBar.ValueItemTemplate>
+                        </materialDesign:RatingBar>
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock TextAlignment="Center">
+                                <Span
+                                    FontFamily="Yu Gothic UI Light"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="Black">
+                                    JÚPITAR
+                                </Span>
+                            </TextBlock>
+
+                            <TextBlock
+                                Width="300"
+                                Margin="0,10,0,10"
+                                FontSize="12"
+                                Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap">
+                                <Span>
+                                    BEM VINDO
+                                </Span>
+                            </TextBlock>
+
+                            <TextBlock
+                                Width="300"
+                                Margin="0,0,0,0"
+                                FontSize="12"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap">
+                                <Span>
+                                    SISTEMA DE PAGAMENTO DE PROPINAS
+                                </Span>
+                            </TextBlock>
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal"
+                                Visibility="Collapsed">
+                                <Button Foreground="White" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="Google" />
+                                </Button>
+                                <Button
+                                    Margin="10"
+                                    Foreground="White"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="Facebook" />
+                                </Button>
+                                <Button Foreground="White" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="GithubCircle" />
+                                </Button>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid
+                    x:Name="grid"
+                    Width="400"
+                    HorizontalAlignment="Left"
+                    Visibility="Collapsed">
+
+                    <StackPanel
+                        Width="250"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="DengXian"
+                            FontSize="26.667"
+                            Foreground="#FF03A9F4">
+                            Criar Conta
+                        </TextBlock>
+                        <StackPanel>
+                            <TextBox
+                                Margin="0,10"
+                                materialDesign:HintAssist.Foreground="LightBlue"
+                                materialDesign:HintAssist.Hint="Nome"
+                                materialDesign:TextFieldAssist.UnderlineBrush="#FF03A9F4"
+                                BorderBrush="LightBlue"
+                                Foreground="#FF03A9F4"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                materialDesign:HintAssist.Foreground="LightBlue"
+                                materialDesign:HintAssist.Hint="Email"
+                                materialDesign:TextFieldAssist.UnderlineBrush="#FF03A9F4"
+                                BorderBrush="LightBlue"
+                                Foreground="#FF03A9F4"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <PasswordBox
+                                Margin="0,10"
+                                materialDesign:HintAssist.Foreground="LightBlue"
+                                materialDesign:HintAssist.Hint="Senha"
+                                materialDesign:TextFieldAssist.UnderlineBrush="#FF03A9F4"
+                                BorderBrush="LightBlue"
+                                Foreground="#FF03A9F4"
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                            <Button
+                                Width="100"
+                                Margin="0,10"
+                                BorderBrush="LightBlue"
+                                Style="{StaticResource MaterialDesignRaisedDarkButton}">
+                                Registar
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card
+            x:Name="card"
+            Width="420"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            Background="#FF181818"
+            RenderTransformOrigin="0.5,0.5">
+            <materialDesign:Card.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </materialDesign:Card.RenderTransform>
+            <materialDesign:Card.Effect>
+                <DropShadowEffect BlurRadius="30" />
+            </materialDesign:Card.Effect>
+            <Grid>
+                <StackPanel
+                    x:Name="stackPanel1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    RenderTransformOrigin="0.5,0.5"
+                    Visibility="Collapsed">
+                    <StackPanel.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </StackPanel.RenderTransform>
+                    <Button
+                        Width="200"
+                        Height="200"
+                        HorizontalAlignment="Center"
+                        Background="{x:Null}"
+                        BorderBrush="#FF03A9F4"
+                        Foreground="#FF03A9F4"
+                        Style="{DynamicResource MaterialDesignFloatingActionButton}">
+                        <Grid>
+                            <materialDesign:PackIcon
+                                Width="100"
+                                Height="100"
+                                Foreground="#FF03A9F4"
+                                Kind="AccountMultiplePlus" />
+                            <StackPanel Visibility="Collapsed">
+                                <Image />
+
+                            </StackPanel>
+                        </Grid>
+
+                    </Button>
+                    <TextBlock
+                        Margin="0,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial"
+                        FontSize="26.667"
+                        Foreground="#FF03A9F4">
+                        Novo Usuário
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel
+                    x:Name="stackPanel"
+                    Width="250"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    RenderTransformOrigin="0.5,0.5"
+                    Visibility="Visible">
+                    <StackPanel.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </StackPanel.RenderTransform>
+                    <Button
+                        Width="70"
+                        Height="70"
+                        HorizontalAlignment="Center"
+                        Background="{x:Null}"
+                        BorderBrush="#FF03A9F4"
+                        Foreground="#FF03A9F4"
+                        Style="{DynamicResource MaterialDesignFloatingActionButton}">
+                        <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="#FF03A9F4"
+                            Kind="User" />
+                    </Button>
+                    <StackPanel>
+                        <TextBox
+                            Name="_Email"
+                            materialDesign:HintAssist.Foreground="LightBlue"
+                            materialDesign:HintAssist.Hint="Usuário"
+                            materialDesign:TextFieldAssist.UnderlineBrush="#FF03A9F4"
+                            BorderBrush="#FF03A9F4"
+                            Foreground="#FF03A9F4"
+                            IsEnabled="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            Text="Admin" />
+                        <PasswordBox
+                            Name="_pwd"
+                            Margin="0,10"
+                            materialDesign:HintAssist.Foreground="LightBlue"
+                            materialDesign:HintAssist.Hint="Senha"
+                            materialDesign:TextFieldAssist.UnderlineBrush="#FF03A9F4"
+                            BorderBrush="#FF03A9F4"
+                            Foreground="#FF03A9F4"
+                            PreviewKeyDown="_pwd_PreviewKeyDown"
+                            Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                        <Button
+                            Name="Logar"
+                            Width="100"
+                            Margin="0,10"
+                            Background="#702C2C2C"
+                            BorderBrush="#FF03A9F4"
+                            Click="Logar_Click"
+                            FontFamily="Yu Gothic UI Light"
+                            FontSize="12"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}">
+                            ENTRAR
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom">
+                    <StackPanel
+                        Margin="0,10"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            x:Name="textBlock"
+                            VerticalAlignment="Center"
+                            MouseDown="textBlock_MouseDown"
+                            Text="XMAJ"
+                            ToolTip="Criador | Xavier Moisés Alberto José  | Email: xmaj2001@gmail.com" />
+                        <Button
+                            x:Name="button"
+                            Margin="5,0"
+                            Padding="0"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="LightBlue"
+                            Visibility="Collapsed">
+                            Criar
+                        </Button>
+                        <Button
+                            x:Name="button2"
+                            Margin="5,0"
+                            Padding="0"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="LightBlue"
+                            Visibility="Collapsed">
+                            Entrar
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>

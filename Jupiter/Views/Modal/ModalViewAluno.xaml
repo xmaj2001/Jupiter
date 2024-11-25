@@ -1,0 +1,165 @@
+﻿<Window
+    x:Class="Jupiter.Views.Modal.ModalViewAluno"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Jupiter.Views.Modal"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ModalViewAluno"
+    Width="600"
+    Height="370"
+    AllowsTransparency="True"
+    Background="White"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid MouseDown="Grid_MouseDown">
+        <Border
+            Height="40"
+            VerticalAlignment="Top"
+            Background="{Binding ElementName=statos, Path=Foreground}">
+            <Grid>
+                <Button
+                    Name="btn_close"
+                    Width="40"
+                    Margin="10,0"
+                    Padding="4"
+                    HorizontalAlignment="Right"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}"
+                    Click="btn_close_Click"
+                    Foreground="#DDFFFFFF">
+                    <materialDesign:PackIcon Kind="WindowClose" />
+                </Button>
+                <TextBlock
+                    Name="Titulo"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Foreground="White">
+                    VERIFICAR PAGAMENTO
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+            <StackPanel VerticalAlignment="Center">
+                <Button
+                    Name="p_foto"
+                    Width="200"
+                    Height="200"
+                    Margin="30,0,0,0"
+                    BorderBrush="{Binding ElementName=statos, Path=Foreground}"
+                    RenderTransformOrigin="0.5,0.5"
+                    Style="{DynamicResource MaterialDesignFloatingActionMiniButton}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="{Binding Foto}" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+
+            </StackPanel>
+            <StackPanel
+                x:Name="stackPanel"
+                Margin="50,0,0,0"
+                VerticalAlignment="Center"
+                RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <TextBlock
+                    Name="_nome"
+                    Margin="0,5"
+                    FontFamily="Pacifico"
+                    FontSize="18"
+                    Foreground="Black"
+                    Text="{Binding Nome}" />
+
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <TextBlock Foreground="DarkGray">
+                        Nº:
+                    </TextBlock>
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        Language="pt-PT"
+                        Text="{Binding Numero}" />
+                </StackPanel>
+
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <TextBlock Foreground="DarkGray">
+                        Classe:
+                    </TextBlock>
+                    <TextBlock Margin="5,0,0,0" Language="pt-PT">
+                        <Run Text="{Binding Classe}" />
+                        <Span>
+                            ª
+                        </Span>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <TextBlock Foreground="DarkGray">
+                        Sala:
+                    </TextBlock>
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        Language="pt-PT"
+                        Text="{Binding Sala}" />
+                </StackPanel>
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <TextBlock Foreground="DarkGray">
+                        Turma:
+                    </TextBlock>
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        Language="pt-PT"
+                        Text="{Binding Turma}" />
+                </StackPanel>
+                <StackPanel Margin="0,5" Orientation="Horizontal">
+                    <TextBlock
+                        Name="statos"
+                        FontWeight="Bold"
+                        Foreground="DarkGray">
+                        Não Pagou
+                    </TextBlock>
+                    <TextBlock Name="textMes" Margin="5,0,0,0">
+                        O MÊS DE OUTOBRO 2023
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <Button
+                        Margin="0,0,10,0"
+                        Background="Black"
+                        BorderBrush="{x:Null}"
+                        Click="btn_close_Click"
+                        FontSize="12"
+                        Foreground="White">
+                        Fechar
+                    </Button>
+                    <Button
+                        Name="btn_detlhes"
+                        Background="{x:Null}"
+                        BorderBrush="Black"
+                        Click="btn_detlhes_Click"
+                        FontSize="12"
+                        Foreground="Black">
+                        Perfil
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
