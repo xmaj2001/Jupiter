@@ -57,7 +57,7 @@ Ao entrar na área principal, clique em "Área de Trabalho" para visualizar esta
 
 - Adicione um novo pagamento, escolha o mês, a forma de pagamento e adicione detalhes adicionais.
 
-![Adição de Pagamento](screenshot/add_pagamento.png)
+![Adição de Pagamento](screenshot/Add_pagamento.png)
 
 - Gere recibos e exporte para PDF.
 
@@ -71,11 +71,11 @@ Ao entrar na área principal, clique em "Área de Trabalho" para visualizar esta
 
 - Visualize alunos em débito no mês atual.
 
-![Pagamentos](screenshot/pagamentos.png)
+![Pagamentos](screenshot/Pagamentos.png)
 
 - Verifique quem pagou ou não um determinado mês.
 
-![Verificação de Pagamento na Área de Pagamentos](screenshot/pagamentosv.png)
+![Verificação de Pagamento na Área de Pagamentos](screenshot/Pagamentosv.png)
 
 ## Detalhes Adicionais
 
