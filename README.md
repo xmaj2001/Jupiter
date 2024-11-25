@@ -75,7 +75,7 @@ Ao entrar na área principal, clique em "Área de Trabalho" para visualizar esta
 
 - Verifique quem pagou ou não um determinado mês.
 
-![Verificação de Pagamento na Área de Pagamentos](screenshot/Pagamentosv.png)
+![Verificação de Pagamento na Área de Pagamentos](screenshot/PagamentosV.png)
 
 ## Detalhes Adicionais
 
